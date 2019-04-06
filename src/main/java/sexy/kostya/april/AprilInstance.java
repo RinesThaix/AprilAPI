@@ -49,4 +49,11 @@ public interface AprilInstance {
      */
     <T> T registerRpcProducer(Class<T> producerClass);
 
+    /**
+     * Register already instantiated ConnectionListener.
+     * @param instance connection listener.
+     * @param <T> class type.
+     */
+    <T extends ConnectionListener> void registerConnectionListener(T instance);
+
 }
