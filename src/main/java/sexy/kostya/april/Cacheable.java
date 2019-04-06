@@ -21,12 +21,6 @@ public @interface Cacheable {
      * Time for which data shall be cached.
      * @return time value.
      */
-    long time();
-
-    /**
-     * Time unit of your time value.
-     * @return time unit.
-     */
-    TimeUnit timeUnit() default TimeUnit.SECONDS;
+    Time time();
 
 }

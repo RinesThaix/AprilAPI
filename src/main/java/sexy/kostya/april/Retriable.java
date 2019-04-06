@@ -29,12 +29,5 @@ public @interface Retriable {
      * Time value of sleeping between retries.
      * @return time value.
      */
-    long timeBetweenRetries() default 500;
-
-    /**
-     * Time unit for time value of sleeping between retries.
-     * @return time unit.
-     */
-    TimeUnit timeUnit() default TimeUnit.MILLISECONDS;
-
+    Time timeBetweenRetries() default @Time(value = 500);
 }
