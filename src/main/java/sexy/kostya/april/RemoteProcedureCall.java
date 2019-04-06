@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 /**
  * Allows you to override producer's name for annotated method execution or
  * not to set it in @Retriever annotation at all.
+ *
  * Created by k.shandurenko on 06/04/2019
  */
 @Target(ElementType.METHOD)

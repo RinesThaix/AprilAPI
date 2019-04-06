@@ -10,6 +10,7 @@ package sexy.kostya.april;
  * new producer of given name connects or disconnects. When new producer connects or disconnects:
  * - All ConnectionListeners of default (null) listener group will be notified
  * - Only one ConnectionListener of each other group will be notified (if there are any)
+ *
  * Created by k.shandurenko on 06/04/2019
  */
 public interface ConnectionListener {
