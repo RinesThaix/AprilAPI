@@ -23,7 +23,7 @@ public @interface Retriable {
      * Amount of retries.
      * @return amount of retries.
      */
-    int retries() default 3;
+    int value() default 3;
 
     /**
      * Time value of sleeping between retries.

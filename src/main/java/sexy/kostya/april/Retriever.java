@@ -17,7 +17,7 @@ public @interface Retriever {
      * Name of the producer to which all remote procedure calls from current interface will be sent to.
      * @return producer's name.
      */
-    String producer();
+    String value();
 
     /**
      * Time value for maximal time you can wait for remote procedure call's result retrieve.

@@ -21,6 +21,6 @@ public @interface Cacheable {
      * Time for which data shall be cached.
      * @return time value.
      */
-    Time time();
+    Time value();
 
 }
