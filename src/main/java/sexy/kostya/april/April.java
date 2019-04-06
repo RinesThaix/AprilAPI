@@ -7,13 +7,13 @@ package sexy.kostya.april;
  */
 public final class April {
 
-    private static AprilInstance INSTANCE;
+    private static volatile AprilInstance INSTANCE;
 
     /**
      * Get implementation of AprilInstance.
      * @return implementation of AprilInstance.
      */
-    public static AprilInstance getInstance() {
+    public static synchronized AprilInstance getInstance() {
         return INSTANCE;
     }
 
@@ -22,8 +22,7 @@ public final class April {
      * @param instance implementation of AprilInstance. As for AprilOriginal, instantiate AprilInstanceImpl
      *                 and pass it as an argument.
      */
-    public static void setInstance(AprilInstance instance) {
+    public static synchronized void setInstance(AprilInstance instance) {
         April.INSTANCE = instance;
     }
-
 }
