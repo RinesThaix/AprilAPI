@@ -5,7 +5,7 @@ package sexy.kostya.april;
  * Is not related to Distributors in any way.
  * Created by k.shandurenko on 27/03/2019
  */
-public class April {
+public final class April {
 
     private static AprilInstance INSTANCE;
 
