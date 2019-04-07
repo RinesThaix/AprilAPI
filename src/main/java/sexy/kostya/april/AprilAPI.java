@@ -10,16 +10,16 @@ public final class AprilAPI {
     private static volatile April INSTANCE;
 
     /**
-     * Get implementation of AprilInstance.
-     * @return implementation of AprilInstance.
+     * Get implementation of {@link April}.
+     * @return implementation of {@link April}.
      */
     public static April getInstance() {
         return INSTANCE;
     }
 
     /**
-     * Set up implementation of AprilInstance.
-     * @param instance implementation of AprilInstance. As for AprilOriginal, instantiate AprilInstanceImpl
+     * Set up implementation of {@link April}.
+     * @param instance implementation of {@link April}. As for AprilOriginal, instantiate AprilImpl
      *                 and pass it as an argument.
      */
     public static void setInstance(April instance) {
