@@ -23,6 +23,6 @@ public @interface ProducerMethodName {
      * of marked remote procedure call.
      * @return method name on producer side.
      */
-    String name();
+    String value();
 
 }

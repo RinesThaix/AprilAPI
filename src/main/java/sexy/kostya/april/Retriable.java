@@ -23,18 +23,11 @@ public @interface Retriable {
      * Amount of retries.
      * @return amount of retries.
      */
-    int retries() default 3;
+    int value() default 3;
 
     /**
      * Time value of sleeping between retries.
      * @return time value.
      */
-    long timeBetweenRetries() default 500;
-
-    /**
-     * Time unit for time value of sleeping between retries.
-     * @return time unit.
-     */
-    TimeUnit timeUnit() default TimeUnit.MILLISECONDS;
-
+    Time timeBetweenRetries() default @Time(value = 500);
 }

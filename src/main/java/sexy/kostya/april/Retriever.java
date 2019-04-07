@@ -17,19 +17,13 @@ public @interface Retriever {
      * Name of the producer to which all remote procedure calls from current interface will be sent to.
      * @return producer's name.
      */
-    String producer() default "";
+    String value() default "";
 
     /**
      * Time value for maximal time you can wait for remote procedure call's result retrieve.
      * @return time value.
      */
-    long timeout() default 1;
-
-    /**
-     * Time unit for timeout time value.
-     * @return time unit.
-     */
-    TimeUnit timeoutTimeUnit() default TimeUnit.SECONDS;
+    Time timeout() default @Time(value = 1, units = TimeUnit.SECONDS);
 
     /**
      * Whether all remote procedure calls must be executed on a randomly selected single instance of Data Producer.

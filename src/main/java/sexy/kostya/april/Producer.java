@@ -16,6 +16,6 @@ public @interface Producer {
      * Name of the producer.
      * @return producer's name.
      */
-    String name();
+    String value();
 
 }

@@ -1,29 +1,59 @@
 package sexy.kostya.april;
 
+import java.util.List;
+
 /**
- * Main point of April API access.
- * Is not related to Distributors in any way.
- * Created by k.shandurenko on 27/03/2019
+ * Created by k.shandurenko on 04/04/2019
  */
-public class April {
-
-    private static AprilInstance INSTANCE;
+public interface April {
 
     /**
-     * Get implementation of AprilInstance.
-     * @return implementation of AprilInstance.
+     * Connect this node to the proxies (Distributors).
+     * System.exit(18) will be called whether initial connection was unsuccessful.
+     * List of proxies addresses will be taken from the configuration file (config.properties).
      */
-    public static AprilInstance getInstance() {
-        return INSTANCE;
-    }
+    void connect();
 
     /**
-     * Set up implementation of AprilInstance.
-     * @param instance implementation of AprilInstance. As for AprilOriginal, instantiate AprilInstanceImpl
-     *                 and pass it as an argument.
+     * Connect this node to the proxies (Distributors).
+     * System.exit(18) will be called whether initial connection was unsuccessful.
+     * @param proxies list of proxies addresses (for example, [localhost:25000, localhost:25001, localhost:25002].
      */
-    public static void setInstance(AprilInstance instance) {
-        April.INSTANCE = instance;
-    }
+    void connect(List<String> proxies);
+
+    /**
+     * Checks whether this node is connected to any of proxies (Distributors).
+     * @return true/false.
+     */
+    boolean isConnected();
+
+    /**
+     * The name of this node which was given to it by proxies (Distributors).
+     * @return name of this node in the network.
+     */
+    String getInstanceName();
+
+    /**
+     * Register and instantiate given retriever interface.
+     * @param retrieverClass retriever interface.
+     * @param <T> interface type.
+     * @return instance of given retriever interface with all methods proxied to use remote procedure calls.
+     */
+    <T> T registerRpcRetriever(Class<T> retrieverClass);
+
+    /**
+     * Register and instantiate given producer class.
+     * @param producerClass producer class.
+     * @param <T> class type.
+     * @return instance of given producer class.
+     */
+    <T> T registerRpcProducer(Class<T> producerClass);
+
+    /**
+     * Register already instantiated ConnectionListener.
+     * @param instance connection listener.
+     * @param <T> class type.
+     */
+    <T extends ConnectionListener> void registerConnectionListener(T instance);
 
 }
