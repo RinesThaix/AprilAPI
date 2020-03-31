@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * Whether you have a method for which you want to select the exact instance of Data Producer
- * on which Remote procedure will be executed on, you can use that annotation.
+ * on which Remote procedure will be executed, you can use that annotation.
  * The value of it is a Node name of Data Producer instance.
  * Can be present only once in method signature.
  *

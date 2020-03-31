@@ -8,6 +8,14 @@ import java.util.List;
 public interface April {
 
     /**
+     * Set forced prefix of this instance name.
+     * If set, final name of the instance (that will be retrieved from proxies)
+     * will be of format prefix-number (for example, hub-2), where number is incrementally counted starting from 1.
+     * @param prefix
+     */
+    void setInstanceNameForcedPrefix(String prefix);
+
+    /**
      * Connect this node to the proxies (Distributors).
      * System.exit(18) will be called whether initial connection was unsuccessful.
      * List of proxies addresses will be taken from the configuration file (config.properties).
