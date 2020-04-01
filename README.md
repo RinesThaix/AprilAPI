@@ -56,10 +56,10 @@ Using that annotation, you can cache the result of method invocation with exactl
 Can be used only on synchronous methods.
 Whether execution of **Remote procedure call** ended up with a timeout or could not find an executor (**Data Producer** with required producer's name), will retry for given amount of times sleeping between them by given amount of time.
 If after all it didn't succeed, throws exception anyways.
-#### Method argument annotation `@ExactInstanceName String`
+#### Method argument annotation `@ExactInstanceName`
 Whether you have a method for which you want to select the exact instance of **Data Producer** on which **Remote procedure** will be executed on, you can use that annotation.
 The value of it is a **Node name** of **Data Producer** instance.
-Can be present only once in method signature.
+Can be present only once in method signature and only on `String` or `Collection<String>` argument type.
 #### Method argument annotation `@IndexField`
 Can be used multiple times in method signature.
 Creates an index using all marked arguments that will be used by **Distributors** to select **Data Producer** on which **Remote procedures** will be executed.
